@@ -340,6 +340,7 @@ body {
 }
 
 
+
 /* tablet media query */
 
 @media (min-width: 768px) {
@@ -349,7 +350,58 @@ body {
     grid-auto-rows: 6em;
     gap: .25em;
     justify-content: center;
-    margin-bottom: 5em;
+    margin-bottom: 100em;
+    
+  }
+  
+  .key {
+    font-size: inherit;
+    grid-column: span 2;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(
+      var(--hue, 200),
+      var(--saturation, 1%),
+      calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+    );
+    color: white;
+    fill: white;
+    text-transform: uppercase;
+    border-radius: .25em;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .key:active {
+    background-color: hsl(
+      var(--hue, 200),
+      var(--saturation, 1%),
+      calc(var(--lightness-offset, 0%) + var(--lightness, 41%))
+    );
+  }
+  
+  .key:active .key-label {
+    transform: translateY(1px);
+  }
+  
+  .key-label {
+    font-size: 1.5em;
+    transition: transform 100ms ease-in-out;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(auto, 2em));
+    grid-auto-rows: 6em;
+    gap: .25em;
+    justify-content: center;
+    margin-bottom: 10em;
     
   }
   
@@ -445,7 +497,7 @@ body {
     grid-auto-rows: 7em;
     gap: .25em;
     justify-content: center;
-    margin-bottom: 5em;
+    margin-bottom: 9em;
   }
   
   .key {
@@ -517,7 +569,7 @@ body {
     grid-auto-rows: 7em;
     gap: .25em;
     justify-content: center;
-    margin-bottom: 5em;
+    margin-bottom: 9em;
   }
   
   .key {
@@ -607,7 +659,7 @@ body {
 
 @media (max-width: 380px) {
   .keyboard {
-    margin-bottom: 5em;
+    margin-bottom: 10em;
   }
   
   .letter-grid, .guess-grid {
@@ -615,8 +667,8 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 2.5em);
-    grid-auto-rows: 2.5em; 
+    grid-template-columns: repeat(auto-fit, 3.5em);
+    grid-auto-rows: 3.5em; 
     grid-auto-flow: column; 
     gap: .05em;
     margin-top: 10em;
@@ -676,7 +728,7 @@ body {
 @media (max-width: 360px) {
 
   .keyboard {
-    margin-bottom: 5em;
+    margin-bottom: 10em;
   } 
 
 
@@ -715,7 +767,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 3em);
+    grid-template-columns: repeat(auto-fit, 3.4em);
     grid-auto-rows: 3em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -779,7 +831,7 @@ body {
   grid-auto-rows: 6em;
   gap: .25em;
   justify-content: center;
-  margin-bottom: 5em;
+  margin-bottom: 10em;
 }
 
 .key {
@@ -876,7 +928,7 @@ body {
     grid-auto-rows: 3.5em;
     gap: .25em;
     justify-content: center;
-    margin-bottom: .5em;
+    margin-bottom: 5em;
   }
   
   .key {
