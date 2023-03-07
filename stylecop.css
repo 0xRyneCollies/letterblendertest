@@ -157,7 +157,7 @@ body {
 
 .tile.ghost {
   background-color: gray;
-  transform: scale(0.9);
+  transform: scale(1.25);
 }
 
 
