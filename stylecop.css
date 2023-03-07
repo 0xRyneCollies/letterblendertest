@@ -120,6 +120,7 @@ body {
   grid-auto-flow: column; 
   gap: .05em;
   margin-top: 10em;
+  width: 100%;
 }
 
 .tile {
@@ -240,6 +241,7 @@ body {
   display: 100vh;
   background: #3c5077;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -350,7 +352,8 @@ body {
     grid-auto-rows: 6em;
     gap: .25em;
     justify-content: center;
-    margin-bottom: 100em;
+    margin-bottom: 9em;
+    flex-direction: column;
     
   }
   
@@ -402,6 +405,7 @@ body {
     gap: .25em;
     justify-content: center;
     margin-bottom: 10em;
+    flex-direction: column;
     
   }
   
@@ -498,6 +502,7 @@ body {
     gap: .25em;
     justify-content: center;
     margin-bottom: 9em;
+    flex-direction: column;
   }
   
   .key {
@@ -570,6 +575,7 @@ body {
     gap: .25em;
     justify-content: center;
     margin-bottom: 9em;
+    flex-direction: column;
   }
   
   .key {
@@ -660,6 +666,7 @@ body {
 @media (max-width: 380px) {
   .keyboard {
     margin-bottom: 10em;
+    flex-direction: column;
   }
   
   .letter-grid, .guess-grid {
@@ -729,6 +736,7 @@ body {
 
   .keyboard {
     margin-bottom: 10em;
+    flex-direction: column;
   } 
 
 
@@ -772,6 +780,7 @@ body {
     grid-auto-flow: column; 
     gap: .05em;
     margin-top: 10em;
+    flex-direction: column;
   }
   
   .tile {
@@ -832,6 +841,7 @@ body {
   gap: .25em;
   justify-content: center;
   margin-bottom: 10em;
+  flex-direction: column;
 }
 
 .key {
@@ -929,6 +939,7 @@ body {
     gap: .25em;
     justify-content: center;
     margin-bottom: 5em;
+    flex-direction: column;
   }
   
   .key {
@@ -1017,6 +1028,4 @@ body {
 
 
 }
-
-
 
