@@ -334,12 +334,13 @@ body {
 
 }
 
-.letter-grid {
-  order: 2;
-}
 
 .guess-grid {
   order: 1;
+}
+
+.letter-grid {
+  order: 2;
 }
 
 .keyboard {
@@ -351,6 +352,18 @@ body {
 /* tablet media query */
 
 @media (min-width: 768px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 2em));
@@ -403,6 +416,18 @@ body {
 }
 
 @media (min-width: 768px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 2em));
@@ -500,6 +525,18 @@ body {
 /* mobile media query */
 
 @media (max-width: 767px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 2em));
@@ -573,6 +610,18 @@ body {
 }
 
 @media (max-width: 500px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 2em));
@@ -669,6 +718,18 @@ body {
 
 
 @media (max-width: 380px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     margin-bottom: 10em;
     flex-direction: column;
@@ -739,6 +800,18 @@ body {
 
 @media (max-width: 360px) {
 
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     margin-bottom: 10em;
     flex-direction: column;
@@ -775,6 +848,18 @@ body {
 }
   
 @media (max-width: 320px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .letter-grid, .guess-grid {
     display: grid;
     justify-content: center;
@@ -839,6 +924,18 @@ body {
 }
 
 @media (max-width: 285px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
 .keyboard {
   display: grid;
   grid-template-columns: repeat(20, minmax(auto, 1.5em));
@@ -937,6 +1034,18 @@ body {
 /* desktop media query */
 
 @media (min-width: 1024px) {
+  .guess-grid {
+    order: 1;
+  }
+  
+  .letter-grid {
+    order: 2;
+  }
+  
+  .keyboard {
+    order: 3;
+  }
+  
   .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 1.25em));
@@ -1033,6 +1142,4 @@ body {
 
 
 }
-
-
 
