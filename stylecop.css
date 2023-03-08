@@ -274,7 +274,7 @@ body {
 
 .key.largeB {
   grid-column: span 3;
-  background-color: blue;
+  background-color: var(--quaternary-color);
   color: rgb(0, 0, 0);
   
   
