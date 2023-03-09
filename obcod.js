@@ -13,9 +13,68 @@ fbButton.addEventListener('touchstart', () => {
 const twitterButton = document.querySelector('.largeT');
 
 twitterButton.addEventListener('click', () => {
-  window.open('https://twitter.com/letterblender');
+  window.open('https://twitter.com/', '_blank');
 });
 
 twitterButton.addEventListener('touchstart', () => {
-  window.open('https://twitter.com/letterblender');
+  window.open('https://twitter.com/', '_blank');
+});
+
+
+var howToPlayLink = document.querySelector(".howToPlayPopUp");
+var howToPlayPopUp = document.getElementById("howToPlayPopUp");
+var howToPlayImages = howToPlayPopUp.querySelectorAll("img");
+var currentIndexP = 0;
+
+howToPlayLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  currentIndexP = 0;
+  showCurrentImage();
+  howToPlayPopUp.style.display = "block";
+});
+
+howToPlayPopUp.addEventListener("click", function(e) {
+  if (e.target !== this)
+    return;
+  currentIndexP++;
+  if (currentIndexP >= howToPlayImages.length) {
+    currentIndexP = 0;
+    howToPlayPopUp.style.display = "none";
+  } else {
+    showCurrentImage();
+  }
+});
+
+document.addEventListener("touchstart", function(e) {
+  if (e.target === howToPlayPopUp || howToPlayPopUp.contains(e.target))
+    return;
+  howToPlayPopUp.style.display = "none";
+});
+
+function showCurrentImage() {
+  for (var i = 0; i < howToPlayImages.length; i++) {
+    if (i === currentIndexP) {
+      howToPlayImages[i].style.display = "block";
+    } else {
+      howToPlayImages[i].style.display = "none";
+    }
+  }
+}
+
+var tipsLink = document.querySelector(".tipsPopUp");
+var tipsPopUp = document.getElementById("tipsPopUp");
+var tipsImage = tipsPopUp.querySelector("img");
+var tipsCloseButton = tipsPopUp.querySelector(".closeButton");
+
+tipsLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  tipsPopUp.style.display = "block";
+});
+
+
+
+tipsPopUp.addEventListener("click", function(e) {
+  if (e.target !== this && e.target !== tipsImage && e.target !== tipsCloseButton)
+    return;
+  tipsPopUp.style.display = "none";
 });
