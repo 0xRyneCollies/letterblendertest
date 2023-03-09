@@ -7,7 +7,7 @@
 
 :root {
   --background-color: hsl(240, 3%, 7%);
-  --primary-color: hsl(240, 2%, 23%);
+  --primary-color: rgb(57, 57, 60);
   --secondary-color: hsl(204, 7%, 85%);
   --tertiary-color: rgb(247, 155, 155);
   --quaternary-color: rgb(192, 238, 192);
@@ -106,7 +106,6 @@
 .brand a:hover {
   color: crimson;
 }
-
 
 
 body {
@@ -245,7 +244,7 @@ body {
   padding: 1em;
   max-width: 90%;
   max-height: 90%;
-  width: 60%;
+  width: 80%;
   height: auto;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -295,6 +294,23 @@ body {
   opacity: 1;
   transition: opacity 250ms ease-in-out;
   margin-bottom: 1em;
+}
+
+.key.largeFB {
+  grid-column: span 4;
+  background-color: #4267B2;
+  color: white;
+  margin-top: 1em;
+  height: 2.5em;
+  
+}
+
+.key.largeT {
+  grid-column: span 4;
+  background-color: #1DA1F2;
+  color: white;
+  margin-top: 1em;
+  height: 2.5em;
 }
 
 
@@ -419,6 +435,31 @@ body {
     color: rgb(0, 0, 0);
   }
 
+  .social-link {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  
+  .social-link button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .social-link .largeFB {
+    background-color: #4267B2;
+    width: 8em;
+  }
+  
+  .social-link .largeT {
+    background-color: #1DA1F2;
+    width: 8em;
+  }
+
   .letter-grid{
     display: grid;
     justify-content: center;
@@ -459,6 +500,10 @@ body {
     max-height: 4em; 
   }
 
+  .footer {
+    height: 15vh;
+  }
+
 
 }
 
@@ -488,6 +533,7 @@ body {
     gap: .25em;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 4em;
     
   }
   
@@ -536,6 +582,31 @@ body {
     color: rgb(0, 0, 0);
   }
 
+  .social-link {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  
+  .social-link button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .social-link .largeFB {
+    background-color: #4267B2;
+    width: 8em;
+  }
+  
+  .social-link .largeT {
+    background-color: #1DA1F2;
+    width: 8em;
+  }
+
   .letter-grid{
     display: grid;
     justify-content: center;
@@ -575,6 +646,12 @@ body {
     max-width: 4em; 
     max-height: 4em; 
   }
+
+  .footer {
+    height: 15vh;
+  }
+  
+
 
 
 }
@@ -651,6 +728,23 @@ body {
     grid-column: span 10;
     background-color: var(--secondary-color);
     color: rgb(0, 0, 0);
+  }
+  
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
   }
 
   .letter-grid{
@@ -783,6 +877,23 @@ body {
     margin-top: .5em;
     width: 100%;
   }
+ 
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+  }
   
   .guess-grid {
     display: grid;
@@ -900,6 +1011,23 @@ body {
     gap: .05em;
     margin-top: .5em;
     width: 100%;
+  }
+  
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
   }
   
   .guess-grid {
@@ -1033,6 +1161,23 @@ body {
     width: 100%;
   }
   
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+  }
+  
   .tile {
     font-size: 2em;
     border: .05em solid var(--primary-color);
@@ -1149,6 +1294,23 @@ body {
     margin-top: 15em;
     width: 100%;
   }
+
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+  }
   
   .tile {
     font-size: 2em;
@@ -1240,6 +1402,23 @@ body {
     grid-column: span 10;
     background-color: var(--secondary-color);
     color: rgb(0, 0, 0);
+  }
+
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
   }
 
   .letter-grid{
@@ -1360,6 +1539,25 @@ body {
     color: rgb(0, 0, 0);
   }
 
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 3em;
+    height: 2.5em;
+  }
+
+  
+
   .letter-grid{
     display: grid;
     justify-content: center;
@@ -1478,6 +1676,23 @@ body {
     color: rgb(0, 0, 0);
   }
 
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 2.5em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 2.5em;
+    height: 2.5em;
+  }
+
   .letter-grid{
     display: grid;
     justify-content: center;
@@ -1539,6 +1754,8 @@ body {
   .footer {
     order: 4;
   }
+
+  
   
   .keyboard {
     height: 35vh;
@@ -1621,6 +1838,23 @@ body {
     gap: .05em;
     margin-top: 10em;
     width: 100%;
+  }
+
+  .key.largeFB {
+    grid-column: span 4;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 1em;
+    height: 2.5em;
+    
+  }
+
+  .key.largeT {
+    grid-column: span 4;
+    background-color: #1DA1F2;
+    color: white;
+    margin-top: 1em;
+    height: 2.5em;
   }
   
   .tile {
