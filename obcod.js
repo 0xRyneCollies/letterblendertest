@@ -13,11 +13,11 @@ fbButton.addEventListener('touchstart', () => {
 const twitterButton = document.querySelector('.largeT');
 
 twitterButton.addEventListener('click', () => {
-  window.open('https://twitter.com/', '_blank');
+  window.open('https://twitter.com/letterblender');
 });
 
 twitterButton.addEventListener('touchstart', () => {
-  window.open('https://twitter.com/', '_blank');
+  window.open('https://twitter.com/letterblender');
 });
 
 
