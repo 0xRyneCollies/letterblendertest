@@ -115,7 +115,7 @@ body {
   min-height: 99vh;
   margin: 0;
   padding: .25em;
-  font-size: clamp(.5rem, 2vmin, 1.5rem);
+  font-size: clamp(.51rem, 2.1vmin, 1.75rem);
   justify-content: center;
   text-align: center;
   width: 100%;
@@ -479,7 +479,7 @@ body {
     border: none;
     border-radius: 0.25em;
     color: white;
-    font-size: 1em;
+    font-size: 2.5em;
     font-weight: bold;
     text-align: center;
   }
