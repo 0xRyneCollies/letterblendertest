@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share LetterBlender Results</title>
+</head>
+<body>
+  <img id="shared-image" alt="LetterBlender Results" />
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function displaySharedImage() {
+      const sharedImage = document.getElementById('shared-image');
+      const encodedDataURL = getQueryParam('image');
+      const decodedDataURL = decodeURIComponent(encodedDataURL);
+      sharedImage.src = decodedDataURL;
+    }
+
+    displaySharedImage();
+  </script>
+</body>
+</html>
