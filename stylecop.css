@@ -237,7 +237,8 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5); /* Adds an overlay effect */
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 0 5px; 
 }
 
 .popup-content {
@@ -248,11 +249,30 @@ body {
   text-align: center;
 }
 
+.popup-content h2 span:first-child {
+  color: green;
+}
+
+/* Style the second span element */
+.popup-content h2 span:nth-child(2) {
+  color: rgb(241, 241, 158);
+}
+
+/* Style the third span element */
+.popup-content h2 span:nth-child(3) {
+  color: green;
+}
+
+/* Style the fourth span element */
+.popup-content h2 span:last-child {
+  color: red;
+}
+
 .stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Allows the stats to wrap to a new line on smaller screens */
+  flex-wrap: wrap; 
   margin-bottom: 20px;
 }
 
@@ -665,7 +685,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -678,7 +698,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -805,7 +825,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -818,8 +838,8 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
-    grid-auto-rows: 4em; 
+    grid-template-columns: repeat(auto-fit, 3.87em);
+    grid-auto-rows: 3.87em; 
     grid-auto-flow: column; 
     gap: .05em;
     margin-top: 15em;
@@ -923,7 +943,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -953,7 +973,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1058,7 +1078,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1088,7 +1108,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1193,7 +1213,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1206,7 +1226,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 4em);
+    grid-template-columns: repeat(auto-fit, 3.87em);
     grid-auto-rows: 4em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1327,7 +1347,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 3.5em);
+    grid-template-columns: repeat(auto-fit, 3.25em);
     grid-auto-rows: 3.5em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1340,7 +1360,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 3.5em);
+    grid-template-columns: repeat(auto-fit, 3.25em);
     grid-auto-rows: 3.5em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1479,7 +1499,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 3.15em);
+    grid-template-columns: repeat(auto-fit, 2.75em);
     grid-auto-rows: 3.15em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1492,7 +1512,7 @@ body {
     justify-content: center;
     align-content: center;
     flex-grow: 1;
-    grid-template-columns: repeat(auto-fit, 3.15em);
+    grid-template-columns: repeat(auto-fit, 2.75em);
     grid-auto-rows: 3.15em; 
     grid-auto-flow: column; 
     gap: .05em;
@@ -1935,8 +1955,9 @@ body {
     margin-top: 10em;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1005555555555555555555555550;
     background-color: rgba(0, 0, 0, 0.5); /* Adds an overlay effect */
+    padding: 0 200px; 
   }
   
   .popup-content {
