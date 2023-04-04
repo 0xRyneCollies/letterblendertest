@@ -15,7 +15,7 @@
 
 #header {
   position: fixed;
-  z-index: 1000;
+  z-index: 998;
   left: 0;
   top: 0;
   width: 100%;
@@ -38,6 +38,7 @@
 
 .guess-grid {
   height: 10vh;
+  z-index: 999;
 }
 
 .letter-grid {
