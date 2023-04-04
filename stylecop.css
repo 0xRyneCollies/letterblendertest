@@ -1288,7 +1288,7 @@ body {
   }
   
   .keyboard {
-    height: 30vh;
+    height: 24vh;
     margin-top: .5em;
     display: grid;
     grid-template-columns: repeat(20, minmax(auto, 2em));
