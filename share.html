@@ -24,3 +24,164 @@
   </script>
 </body>
 </html>
+
+
+
+
+async function dataURLtoFile(dataURL, fileName) {
+  const response = await fetch(dataURL);
+  const blob = await response.blob();
+  return new File([blob], fileName, { type: 'image/png' });
+}
+
+async function createImageWithText(americanDate, timeDiff, streakNumber) {
+  const response = await fetch('./backgroundshare.png');
+  const blob = await response.blob();
+  const image = await createImageBitmap(blob);
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = image.width;
+  canvas.height = image.height;
+
+  ctx.drawImage(image, 0, 0);
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '24px sans-serif';
+  ctx.textAlign = 'center';
+
+  const yOffset = image.height * 0.6;
+  const lineHeight = 30;
+
+  ctx.fillText(`Date: ${americanDate}`, image.width / 2, yOffset);
+  ctx.fillText(`Time: ${timeDiff}`, image.width / 2, yOffset + lineHeight);
+  ctx.fillText(`Streak: ${streakNumber}`, image.width / 2, yOffset + lineHeight * 2);
+  ctx.fillText(`Play here: https://0xrynecollies.github.io/letterblendertest/`, image.width / 2, yOffset + lineHeight * 4);
+
+  const dataURL = canvas.toDataURL('image/png');
+  return dataURL;
+}
+
+function addPopupListeners() {
+  const popup = document.querySelector('.popup-container');
+  const shareButton = document.querySelector('#share-button');
+  const timeDiff = document.querySelector('#time-diff').textContent;
+  const lastWord = document.querySelector('#last-word').textContent;
+  const streak = document.querySelector('#streak').textContent;
+
+  const americanDate = `${month}/${dayT}/${year}`;
+
+  shareButton.addEventListener('click', async function () {
+    const imageURL = await createImageWithText(americanDate, timeDiff, streak);
+    const imageFile = await dataURLtoFile(imageURL, 'LetterBlenderResults.png');
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'My LetterBlender Results',
+          text: `I completed today's LetterBlender challenge in ${timeDiff}. My streak is ${streak}. https://0xrynecollies.github.io/letterblendertest/`,
+          url: 'https://0xrynecollies.github.io/letterblendertest/',
+          files: [imageFile],
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      const textarea = document.createElement('textarea');
+      document.body.appendChild(textarea);
+      textarea.value = `Image URL: ${imageURL}\nhttps://0xrynecollies.github.io/letterblendertest/`;
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Image URL and game link copied to clipboard. Paste it into a browser or compatible app.');
+    }
+  });
+}
+
+
+
+//////////////////
+
+
+
+function isSafari() {
+  const userAgent = window.navigator.userAgent;
+  return /^((?!chrome|android).)*safari/i.test(userAgent);
+}
+
+async function dataURLtoFile(dataURL, fileName) {
+  const response = await fetch(dataURL);
+  const blob = await response.blob();
+  return new File([blob], fileName, { type: 'image/png' });
+}
+
+async function createImageWithText(americanDate, timeDiff, streakNumber) {
+  const response = await fetch('./backgroundshare.png');
+  const blob = await response.blob();
+  const image = await createImageBitmap(blob);
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = image.width;
+  canvas.height = image.height;
+
+  ctx.drawImage(image, 0, 0);
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '24px sans-serif';
+  ctx.textAlign = 'center';
+
+  const yOffset = image.height * 0.6;
+  const lineHeight = 30;
+
+  ctx.fillText(`Date: ${americanDate}`, image.width / 2, yOffset);
+  ctx.fillText(`Time: ${timeDiff}`, image.width / 2, yOffset + lineHeight);
+  ctx.fillText(`Streak: ${streakNumber}`, image.width / 2, yOffset + lineHeight * 2);
+  ctx.fillText(`Play here: https://0xrynecollies.github.io/letterblendertest/`, image.width / 2, yOffset + lineHeight * 4);
+
+  const dataURL = canvas.toDataURL('image/png');
+  return dataURL;
+}
+
+function addPopupListeners() {
+  const popup = document.querySelector('.popup-container');
+  const shareButton = document.querySelector('#share-button');
+  const timeDiff = document.querySelector('#time-diff').textContent;
+  const lastWord = document.querySelector('#last-word').textContent;
+  const streak = document.querySelector('#streak').textContent;
+
+  const americanDate = `${month}/${dayT}/${year}`;
+
+  shareButton.addEventListener('click', async function () {
+    const imageURL = await createImageWithText(americanDate, timeDiff, streak);
+    const imageFile = await dataURLtoFile(imageURL, 'LetterBlenderResults.png');
+
+    if (navigator.share) {
+      if (isSafari()) {
+        // If it's Safari (iOS), open the image in a new window
+        window.open(imageURL, '_blank');
+      } else {
+        try {
+          await navigator.share({
+            title: 'My LetterBlender Results',
+            text: `I completed today's LetterBlender challenge in ${timeDiff}. My streak is ${streak}. https://0xrynecollies.github.io/letterblendertest/`,
+            url: 'https://0xrynecollies.github.io/letterblendertest/',
+            files: [imageFile],
+          });
+        } catch (err) {
+          console.error('Error sharing:', err);
+        }
+      }
+    } else {
+      const textarea = document.createElement('textarea');
+      document.body.appendChild(textarea);
+      textarea.value = `Image URL: ${imageURL}\nhttps://0xrynecollies.github.io/letterblendertest/`;
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Image URL and game link copied to clipboard. Paste it into a browser or compatible app.');
+    }
+  });
+}
