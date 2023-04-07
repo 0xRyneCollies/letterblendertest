@@ -185,3 +185,112 @@ function addPopupListeners() {
     }
   });
 }
+
+
+async function uploadToImgur(imageDataURL, clientId) {
+  const base64Data = imageDataURL.replace(/^data:image\/\w+;base64,/, '');
+  const response = await fetch('https://api.imgur.com/3/image', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Client-ID ${clientId}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ image: base64Data }),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to upload image to Imgur');
+  }
+
+  const jsonResponse = await response.json();
+  return jsonResponse.data.link;
+}
+
+
+
+async function dataURLtoFile(dataURL, fileName) {
+  const response = await fetch(dataURL);
+  const blob = await response.blob();
+  return new File([blob], fileName, { type: 'image/png' });
+}
+
+async function createImageWithText(americanDate, timeDiff, streakNumber) {
+  const response = await fetch('./backgroundshare.png');
+  const blob = await response.blob();
+  const image = await createImageBitmap(blob);
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = image.width;
+  canvas.height = image.height;
+
+  ctx.drawImage(image, 0, 0);
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '24px sans-serif';
+  ctx.textAlign = 'center';
+
+  const yOffset = image.height * 0.6;
+  const lineHeight = 30;
+
+  ctx.fillText(`Date: ${americanDate}`, image.width / 2, yOffset);
+  ctx.fillText(`Time: ${timeDiff}`, image.width / 2, yOffset + lineHeight);
+  ctx.fillText(`Streak: ${streakNumber}`, image.width / 2, yOffset + lineHeight * 2);
+  ctx.fillText(`Play here: https://0xrynecollies.github.io/letterblendertest/`, image.width / 2, yOffset + lineHeight * 4);
+
+  const dataURL = canvas.toDataURL('image/png');
+  return dataURL;
+}
+
+function addPopupListeners() {
+  const popup = document.querySelector('.popup-container');
+  const shareButton = document.querySelector('#share-button');
+  const timeDiff = document.querySelector('#time-diff').textContent;
+  const lastWord = document.querySelector('#last-word').textContent;
+  const streak = document.querySelector('#streak').textContent;
+
+  const americanDate = `${month}/${dayT}/${year}`;
+  const clientId = '0cc79b072586012';
+
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  }
+  
+  shareButton.addEventListener('click', async function () {
+    const imageURL = await createImageWithText(americanDate, timeDiff, streak);
+    const imgurLink = await uploadToImgur(imageURL, clientId);
+  
+    if (navigator.share && !isIOS()) {
+      try {
+        await navigator.share({
+          title: 'My LetterBlender Results',
+          text: `I completed today's LetterBlender challenge in ${timeDiff}. My streak is ${streak}. Check out my result: ${imgurLink}`,
+          url: 'https://0xrynecollies.github.io/letterblendertest/',
+        });
+        return; // Exit the event listener after sharing
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    }
+  
+    const textToCopy = `Check out my LetterBlender result: ${imgurLink}\nPlay the game: https://0xrynecollies.github.io/letterblendertest/`;
+  
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        alert('Imgur link and game link copied to clipboard. Paste it into a browser or compatible app.');
+      } catch (err) {
+        console.error('Error copying to clipboard:', err);
+      }
+    } else {
+      const textarea = document.createElement('textarea');
+      document.body.appendChild(textarea);
+      textarea.value = textToCopy;
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Imgur link and game link copied to clipboard. Paste it into a browser or compatible app.');
+    }
+  });
+}
