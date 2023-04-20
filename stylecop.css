@@ -129,6 +129,7 @@ body {
 
 .letter-grid .tile {
   background-color: var(--tertiary-color);
+  z-index: 1.1;
 }
 
 .guess-grid .tile {
