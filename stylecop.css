@@ -265,12 +265,13 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  margin-top: 20em;
+  margin-top: 10em;
   top: 0;
   left: 0;
   z-index: 19;
   background-color: rgba(0, 0, 0, 0.5); 
-  padding: 0 5px; 
+  padding: 0 10px; 
+
 }
 
 .popup-content {
@@ -279,15 +280,23 @@ body {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  
 }
 
+/* Common style for all span elements */
+.popup-content h2 span {
+  font-size: 24px; /* Increase the font size for span elements */
+  font-weight: bold;
+}
+
+/* Style the first span element */
 .popup-content h2 span:first-child {
   color: green;
 }
 
 /* Style the second span element */
 .popup-content h2 span:nth-child(2) {
-  color: rgb(241, 241, 158);
+  color: rgb(189, 189, 23);
 }
 
 /* Style the third span element */
@@ -300,19 +309,44 @@ body {
   color: red;
 }
 
+
 .stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Set a maximum width for the stats container */
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto; /* Center the container horizontally */
 }
 
 .stat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 20px;
+  padding: 20px;
+  text-align: center;
+  width: calc(50% - 40px); /* Set a width for each stat */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.stat h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
 }
 
 #share-button {
