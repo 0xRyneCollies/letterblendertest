@@ -276,7 +276,7 @@ body {
 
 .popup-content {
   background-color: #c5b2b2; /* Lighter shade of gray */
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -315,8 +315,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 2px;
+  padding: 2px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 800px; /* Set a maximum width for the stats container */
@@ -328,8 +328,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 20px;
-  padding: 20px;
+  margin: 0 10px;
+  padding: 5px;
   text-align: center;
   width: calc(50% - 40px); /* Set a width for each stat */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
